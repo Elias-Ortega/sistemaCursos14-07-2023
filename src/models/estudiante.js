@@ -37,6 +37,10 @@ const Estudiante = sequelize.define('Estudiante', {
     updatedAt: false
 });
 
+export{
+    Estudiante
+}
+
 /* //select de la tabla
 const arregloEstudiantes = await Estudiante.findAll();
 console.log(arregloEstudiantes); */

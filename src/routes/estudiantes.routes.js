@@ -4,9 +4,9 @@ import { create, deleteById, findAll, findById, update } from "../controllers/es
 const routerEstudiantes = Router();
 
 //agrega estudiantes a todas las rutas de estudiante
-routerEstudiantes.get('/', findAll );
+routerEstudiantes.get('/', findAll);
 
-  routerEstudiantes.get('/:id', findById );
+  routerEstudiantes.get('/:id', findById);
 
   routerEstudiantes.post('/', create);
 

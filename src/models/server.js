@@ -12,14 +12,15 @@ export default class Server {
         this.routes();   //para que las rutas se ejecuten al momento de disparar la aplicacion,cuando se inicie el servidor.
     }
 
-    //middlewares(una configuracion extra)
-    middlewares(){       
+    //middlewares( metodos para una configuracion extra)
+    middlewares(){   
+        this.app.use(express.static('public')) ;  //recursos estaticos y this porque estamos trabajando  con poo.
         this.app.use(express.json());
     }
 
     //para llamar a las rutas
     routes(){
-        this.app.use('/estudiantes', routerEstudiantes)
+        this.app.use('/estudiantes', routerEstudiantes);
     }
 
     //funcion listen para llamarlo desde afuera
