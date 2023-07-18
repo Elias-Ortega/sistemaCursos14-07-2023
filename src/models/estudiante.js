@@ -37,8 +37,9 @@ const Estudiante = sequelize.define('Estudiante', {
     updatedAt: false
 });
 
+/* //select de la tabla
 const arregloEstudiantes = await Estudiante.findAll();
-console.log(arregloEstudiantes);
+console.log(arregloEstudiantes); */
 
 //eliminacion de una fila, metodo destroy , retorna una promesa. destroy no tiene returning no muestra el objeto eliminado.
 /* const estudianteUno =  Estudiante.build({id_estudiante:1001}); 
