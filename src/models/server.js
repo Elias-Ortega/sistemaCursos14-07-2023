@@ -1,28 +1,26 @@
 //configuracion del servidor, sin las llaves se importa.
-import express from "express";
+import express from 'express';
+import { routerEstudiante } from '../routes/estudiantes.routes.js';
 
 export default class Server {
-
     constructor() {
-        this.app = express()
+        this.app = express();
         this.port = process.env.PORT;
 
-        this.routes();   //para que las rutas se ejecuten al momento de disparar la aplicacion,cuando se inicie el servidor.
+        this.middleware();
+        this.routes();
     }
 
-    //para llamar a las rutas
-    routes(){
-        this.app.get('/', (req, res) => {
-            res.send('Hello World!')
-          })
+    middleware(){
+        this.app.set('view engine', 'hbs');
     }
 
-    //funcion listen para llamarlo desde afuera
+    routes() {
+        this.app.use('/estudiantes', routerEstudiante);
+    }
     listen() {
         this.app.listen(this.port, () => {
             console.log(`Corriendo en el puerto: ${this.port}`)
         })
     }
-
-
 }
