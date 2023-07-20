@@ -6,16 +6,35 @@ const findAllEstudiantes = async (req, res) => {
         listadoEstudiantes
     });
 }
-
 const findByIdEstudiante = (req, res) => {
     res.send('find by id');
 }
-const insertEstudiante = (req, res) => {
-    res.send('insert');
+
+
+const insertEstudiante = async (req, res) => {
+    const { txtIdentificador, txtRut, txtNombre, txtApePat, txtApeMat} = req.body;
+    const identificador = parseInt(txtIdentificador);
+    const estudianteInsertado = await Estudiante.create({
+        id_estudiante: identificador,
+        rut: txtRut,
+        nombre: txtNombre,
+        apellido_pat: txtApePat,
+        apellido_mat: txtApeMat
+    });
+    const listadoEstudiantes = await Estudiante.findAll();
+    res.render('index', {
+        listadoEstudiantes
+    });
 }
+
+const llamarFormulario = (req, res) => {
+    res.render('formularioInsertar');
+}
+
 const updateEstudiante = (req, res) => {
     res.send('update');
 }
+
 const deleteByIdEstudiante = (req, res) => {
     res.send('delete by id');
 }
@@ -24,5 +43,6 @@ export{
     findByIdEstudiante,
     insertEstudiante,
     updateEstudiante,
-    deleteByIdEstudiante
+    deleteByIdEstudiante,
+    llamarFormulario
 }
