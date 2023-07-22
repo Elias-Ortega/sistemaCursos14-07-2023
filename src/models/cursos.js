@@ -31,6 +31,6 @@ export {
     Curso
 }
 
-const curso = await Curso.findAll();
-console.log(curso);
+/* const curso = await Curso.findAll();
+console.log(curso); */
 

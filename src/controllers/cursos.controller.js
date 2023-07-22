@@ -1,3 +1,6 @@
+import { Curso } from "../models/cursos.js";
+import { PlanFormativo } from "../models/planFormativo.js";
+
 const findAll = (req, res) => {
     res.json("find all");
 }
