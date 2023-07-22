@@ -2,8 +2,12 @@ const findAll = (req, res) => {
     res.json("find all");
 }
 
-const findById = (req, res) => {
-    res.json("find by id");
+const findById = async (req, res) => {
+    const id = req.params.id;
+    const curso = await Curso.findByPk(id, {
+        include: PlanFormativo
+    });
+    res.json(curso);
 }
 
 const create = (req, res) => {
