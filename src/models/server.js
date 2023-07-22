@@ -1,6 +1,8 @@
 //configuracion del servidor, sin las llaves se importa.
-import express from "express";
-import { routerEstudiantes } from "../routes/estudiantes.routes.js";
+import express from 'express';
+import { routerEstudiantes } from '../routes/estudiantes.routes.js';
+import { routerPlanFormativo } from '../routes/planFormativo.routes.js';
+import { routerCurso } from '../routes/cursos.routes.js';
 
 export default class Server {
 
@@ -21,6 +23,8 @@ export default class Server {
     //para llamar a las rutas
     routes(){
         this.app.use('/estudiantes', routerEstudiantes);
+        this.app.use('/planFormativo',routerPlanFormativo);
+        this.app.use('/cursos', routerCurso);
     }
 
     //funcion listen para llamarlo desde afuera

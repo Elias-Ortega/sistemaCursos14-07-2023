@@ -2,6 +2,8 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../cnn/cnn.js";
 
 
+
+
 const Curso = sequelize.define('Curso', {
     codigo_curso: {
         type: DataTypes.STRING(30),

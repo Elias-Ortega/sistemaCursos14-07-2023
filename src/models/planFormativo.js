@@ -36,6 +36,8 @@ export{
     PlanFormativo
 }
 
+
+//dos tipos de carga
 // Lazy Loading: carga diferida: carga perezosa
 /* const plan = await PlanFormativo.findByPk('A1');
 console.log(plan.dataValues);
@@ -50,3 +52,10 @@ cursosPlan.forEach(curso => {
 });
 
 console.log(plan.dataValues); */
+ /* ejemplo carga ansiosa
+ 
+ const curso = await Curso.findByPk('0004', {
+    include: PlanFormativo
+});
+console.log(curso.dataValues);  */
+
