@@ -20,6 +20,7 @@ const PlanFormativo = sequelize.define('PlanFormativo', {
     updatedAt: false
 });
 
+//relacion uno a muchos
 PlanFormativo.hasMany(Curso, {
     foreignKey: 'codigo_plan_formativo',
     sourceKey: 'codigo_plan_formativo'
